@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SafeTour</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+.tour-card{
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+.tour-card:hover{transform:translateY(-5px);}
+
+.tour-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.tour-body{padding:15px;}
+
+.tour-top{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:10px;
+}
+
+.tour-code{
+  background:#e0f7f5;
+  padding:5px 10px;
+  border-radius:10px;
+  font-weight:bold;
+}
+
+.badge{
+  padding:5px 10px;
+  border-radius:10px;
+  font-size:12px;
+}
+
+.hot{
+  background:#ffe5d0;
+  color:#ff6b00;
+}
+
+.photo{
+  background:#e6f0ff;
+  color:#007bff;
+}
+
+.info{
+  font-size:14px;
+  margin:10px 0;
+}
+
+.bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.price{
+  color:#ff6b00;
+  font-weight:bold;
+}
+
+.bottom button{
+  background:#ff914d;
+  border:none;
+  color:white;
+  padding:8px 15px;
+  border-radius:15px;
+}
+.zalo{
+  background:#0084ff;
+  color:white;
+  border:none;
+}
+.qty-box{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+}
+
+.qty-box input{
+  width:80px;
+  height:40px;
+  font-size:18px;
+  font-weight:bold;
+  text-align:center;
+  border:2px solid #31b220;
+  border-radius:10px;
+}
+
+.qty-box button{
+  width:40px;
+  height:40px;
+  font-size:20px;
+  border:none;
+  background:#31b220;
+  color:white;
+  border-radius:10px;
+}
+* {
+  font-family: "Times New Roman", Times, serif !important;
+}
+/* FOOTER */
+footer {  
+  background: #0b242f;  
+  color: #d3e8e9;  
+  padding: 30px 15px;  
+  text-align: center;  
+  font-size: 14px;  
+}  
+
+footer .contact-section {  
+  max-width: 700px;  
+  margin: 0 auto;  
+}  
+
+footer h2 {  
+  font-size: 24px;  
+  margin-bottom: 20px;  
+  color: #ccdfb4;  
+}  
+
+footer .quick-contact {  
+  background: #144f3d;  
+  padding: 20px;  
+  border-radius: 10px;  
+  margin-bottom: 15px;  
+}  
+
+footer .quick-contact p {  
+  margin: 6px 0;  
+  font-weight: 600;  
+}  
+
+footer .btn-contact {  
+  background: #31b220;  
+  border: none;  
+  color: white;  
+  padding: 12px 25px;  
+  border-radius: 25px;  
+  font-weight: 700;  
+  cursor: pointer;  
+  margin-top: 10px;  
+  font-size: 15px;  
+}  
+
+footer .info-contact {  
+  background: #14494d;  
+  border-radius: 12px;  
+  padding: 18px 20px;  
+  text-align: left;  
+  font-size: 15px;  
+  line-height: 1.4;  
+}  
+
+footer .info-contact p {  
+  margin: 6px 0;  
+}  
+
+footer .info-contact p strong {  
+  color: #ccdfb4;  
+}  
+
+footer .copy {  
+  margin-top: 15px;  
+  font-size: 12px;  
+  color: #88b0a7;  
+}  
+
+/* BOTTOM NAV */
+.bottom-nav{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-around;
+background:#fff;
+border-top:1px solid #ddd;
+padding:8px 0;
+z-index:999;
+}
+
+.bottom-nav button{
+background:none;
+border:none;
+font-size:13px;
+display:flex;
+flex-direction:column;
+align-items:center;
+color:#555;
+}
+
+.bottom-nav button span{
+font-size:18px;
+}
+
+.bottom-nav .active{
+color:#31b220;
+font-weight:600;
+}
+
+.call-btn{
+color:#31b220;
+font-weight:700;
+}
+/* BACK BUTTON */
+.back-btn{
+display:none;
+position:fixed;
+top:15px;
+left:15px;
+width:42px;
+height:42px;
+border:none;
+border-radius:50%;
+font-size:22px;
+color:#fff;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(10px);
+box-shadow:0 4px 12px rgba(0,0,0,0.3);
+z-index:9999;
+cursor:pointer;
+}
+
+/* HEADER */
+header{
+display:flex;
+align-items:center;
+gap:10px;
+padding:10px;
+background:#eef7f9;
+position:sticky;
+top:0;
+z-index:1000;
+border-bottom:1px solid #ddd;
+}
+
+.logo-img{
+width:40px;
+height:40px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.title{
+font-weight:700;
+font-size:14px;
+color:#004a99;
+line-height:1.2;
+}
+
+.address{
+font-size:12px;
+color:#555;
+}
+
+.book-tour,
+.book-schedule{
+  background:#ff914d;
+  color:white;
+  border:none;
+  padding:10px 20px;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+.menu-btn{
+margin-left:auto;
+background:none;
+border:none;
+font-size:22px;
+cursor:pointer;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:15px;
+padding:15px;
+}
+
+/* CARD */
+.card{
+background:white;
+border-radius:18px;
+overflow:hidden;
+cursor:pointer;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+.card:hover{transform:translateY(-5px);}
+.card img{width:100%;height:180px;object-fit:cover;}
+.card-body{padding:12px;font-weight:600;}
+
+/* DETAIL */
+.detail{
+display:none;
+padding:15px;
+max-width:900px;
+margin:auto;
+}
+
+.detail img{
+width:100%;
+border-radius:15px;
+margin-bottom:10px;
+}
+
+
+/* TABS */
+.tabs{display:flex;gap:8px;margin-top:15px;}
+.tab{
+flex:1;
+padding:10px;
+border:none;
+border-radius:12px;
+background:#eee;
+font-weight:600;
+}
+.tab.active{background:#31b220;color:white;}
+
+.tab-content{
+display:none;
+background:white;
+padding:12px;
+margin-top:10px;
+border-radius:12px;
+}
+.tab-content.active{display:block;}
+
+/* FORM */
+.qty-box{display:flex;gap:10px;margin:10px 0;}
+.qty-box button{
+padding:8px 12px;
+border:none;
+background:#31b220;
+color:white;
+border-radius:8px;
+}
+.qty-box input{width:60px;text-align:center;}
+
+.total{
+background:#e8f5e9;
+padding:10px;
+border-radius:10px;
+margin-top:10px;
+}
+
+input{
+padding:10px;
+border-radius:8px;
+border:1px solid #ddd;
+width:100%;
+margin-top:5px;
+}
+
+
+.btn, .book-tour, .zalo-btn {
+  border-radius: 999px;
+  padding: 12px 25px;
+  font-weight: bold;
+
+}
+</style>
+</head>
+
+<body>
+
+<header>  
+  <img src=https://i.postimg.cc/fbFTN1mN/z7679137568925-b3c1a8c6e52d31d96640c53ca184d6b4.jpg alt="Safe Tour Logo" class="logo-img" />  
+  
+  <div class="title">  
+    Safe Tour<br />  
+    <span class="address">Tour đảo Phú Yên</span>  
+  </div>  
+
+  <button class="book-tour">Book tour</button>  
+  <button class="book-schedule">Đặt Lịch</button>  
+  <button class="menu-btn">&#9776;</button>  
+</header>
+
+<!-- LIST -->
+  <div id="list">
+
+  <div class="title-bar">
+    🌿 TOUR PHÚ YÊN – HOT NHẤT
+  </div>
+  <div class="grid">
+
+  <!-- HÒN NƯA -->
+  <div class="tour-card" onclick="showTour('honnua')">
+    <img src="https://i.postimg.cc/NF3y1cT7/z7680420359383-15aef0bc328ab9f4561b6aeb5f027186.jpg">
+    <div class="tour-body">
+      <div class="tour-top">
+        <span class="tour-code">Hòn Nưa</span>
+        
+      </div>
+
+      <h3>Tour Hòn Nưa</h3>
+      <p>Check-in Hang Yến + Lặn san hô + Chèo SUP.</p>
+
+      <div class="info">
+        📍 Vũng Rô – Hòn Nưa <br>
+        📅 Hàng ngày
+      </div>
+
+      <div class="bottom">
+        <span class="price">599.000đ/khách</span>
+        <button>Xem chi tiết</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HÒN NƯA VIP -->
+  <div class="tour-card" onclick="showTour('honnuavip')">
+    <img src="https://i.postimg.cc/KzFpR8nd/IMG-9796.jpg">
+    <div class="tour-body">
+      <div class="tour-top">
+        <span class="tour-code">VIP</span>
+        <span class="badge hot">🔥 VIP</span>
+      </div>
+
+      <h3>Hòn Nưa VIP</h3>
+      <p>Xe đưa đón + ăn sáng + chụp ảnh riêng.</p>
+
+      <div class="info">
+        📍 Vũng Rô – Hòn Nưa <br>
+        📅 Hàng ngày
+      </div>
+
+      <div class="bottom">
+        <span class="price">799.000đ/khách</span>
+        <button>Xem chi tiết</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CÙ LAO -->
+  <div class="tour-card" onclick="showTour('culao')">
+  <img src="https://i.postimg.cc/QtNcthkd/z7680426509652-7aac57fa6df8e4d0b3e6e7d063750faa.jpg">
+  <div class="tour-body">
+    <div class="tour-top">
+      <span class="tour-code">Cù Lao</span>
+      <span class="badge hot">🔥 Hot</span>
+    </div>
+
+    <h3>Cù Lao Mái Nhà</h3>
+    <p>Trecking hồ vô cực + Lặn san hô + SUP.</p>
+
+    <div class="info">
+      📍 Cù Lao Mái Nhà <br>
+      📅 Hàng ngày
+    </div>
+
+    <div class="bottom">
+      <span class="price">599.000đ/khách</span>
+      <button>Xem chi tiết</button>
+    </div>
+  </div>
+</div>
+
+  <!-- CÙ LAO VIP -->
+  <div class="tour-card" onclick="showTour('culaovip')">
+    <img src="https://i.postimg.cc/pLpwHrZC/z7679179315246-5c53b7092c0ed4d34c50c22f242ef05c.jpg">
+    <div class="tour-body">
+      <div class="tour-top">
+        <span class="tour-code">VIP</span>
+        <span class="badge hot">🔥 VIP</span>
+      </div>
+
+      <h3>Cù Lao VIP</h3>
+      <p>Xe đưa đón + Dịch vụ cao cấp + Ăn sáng.</p>
+
+      <div class="info">
+        📍 Cù Lao Mái Nhà <br>
+        📅 Hàng ngày
+      </div>
+
+      <div class="bottom">
+        <span class="price">799.000đ/khách</span>
+        <button>Xem chi tiết</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAMPING -->
+  <div class="tour-card" onclick="showTour('camp')">
+    <img src="https://i.postimg.cc/MGGvxyLC/IMG-9790.jpg">
+    <div class="tour-body">
+      <div class="tour-top">
+        <span class="tour-code">CAMP</span>
+        <span class="badge photo">🏕 Camping</span>
+      </div>
+
+      <h3>Camping Cù Lao</h3>
+      <p>Ngắm hoàng hôn + Ngủ lều cực chill + Trecking Hồ Vô Cực.</p>
+
+      <div class="info">
+        📍 Cù Lao Mái Nhà <br>
+        📅 Hàng ngày
+      </div>
+
+      <div class="bottom">
+        <span class="price">699.000đ/khách</span>
+        <button>Xem chi tiết</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CÁNH NAM -->
+  <div class="tour-card" onclick="showTour('canhnam')">
+    <img src="https://i.postimg.cc/qqNFdZsP/z7679266364738-ba000a57f956e11ddda537911a7ce002.jpg">
+    <div class="tour-body">
+      <div class="tour-top">
+        <span class="tour-code">Cánh Nam Phú Yên</span>
+      </div>
+
+      <h3>Đảo Cánh Nam</h3>
+      <p>Kết hợp Hòn Nưa + Mũi Điện.</p>
+
+      <div class="info">
+        📍 Phú Yên <br>
+        📅 Hàng ngày
+      </div>
+
+      <div class="bottom">
+        <span class="price">850.000đ/khách</span>
+        <button>Xem chi tiết</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CÁNH BẮC -->
+  <div class="tour-card" onclick="showTour('canhbac')">
+    <img src="https://i.postimg.cc/Rh2cJgj2/z7679198772085-cd9f8f0c3d30779fc5bea5ac2e586f83.jpg">
+    <div class="tour-body">
+      <div class="tour-top">
+        <span class="tour-code">Cánh Bắc Phú Yên</span>
+      </div>
+
+      <h3>Đảo Cánh Bắc</h3>
+      <p>Cù Lao + Hòn Yến + Tháp Nghinh Phong.</p>
+
+      <div class="info">
+        📍 Phú Yên <br>
+        📅 Hàng ngày
+      </div>
+
+      <div class="bottom">
+        <span class="price">850.000đ/khách</span>
+        <button>Xem chi tiết</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div> <!-- đóng #list -->
+
+<button class="back-btn" onclick="goBack()">❮</button>
+
+<!-- DETAIL -->
+<div class="detail" id="detail">
+<h2 id="title"></h2>
+<img id="img">
+
+<div class="tabs">
+<button class="tab active" onclick="openTab('scheduleTab',this)">Lịch trình</button>
+<button class="tab" onclick="openTab('serviceTab',this)">Dịch vụ</button>
+<button class="tab" onclick="openTab('noteTab',this)">Lưu ý</button>
+</div>
+
+<div id="scheduleTab" class="tab-content active"></div>
+<div id="serviceTab" class="tab-content"></div>
+<div id="noteTab" class="tab-content"></div>
+
+<h3>Giá tour</h3>
+<p id="price"></p>
+
+<h3>Số khách</h3>
+<div class="qty-box">
+<button onclick="changeQty(-1)">-</button>
+<input id="qty" value="1">
+<button onclick="changeQty(1)">+</button>
+</div>
+
+<div class="total">
+<p id="guest"></p>
+<p id="total"></p>
+</div>
+
+<h3>Thông tin khách</h3>
+<input id="name" placeholder="Họ tên">
+<input id="phone" placeholder="SĐT">
+<input id="date" type="date">
+
+<button class="btn" onclick="bookTour()">Đặt tour</button>
+
+<a id="zaloBtn" target="_blank">
+<button class="btn zalo">Đặt qua Zalo</button>
+</a>
+
+</div>
+
+<script>
+  const title = document.getElementById("title");
+const img = document.getElementById("img");
+const list = document.getElementById("list");
+const detail = document.getElementById("detail");
+const qty = document.getElementById("qty");
+const name = document.getElementById("name");
+const phone = document.getElementById("phone");
+const date = document.getElementById("date");
+const price = document.getElementById("price");
+const total = document.getElementById("total");
+const guest = document.getElementById("guest");
+const zaloBtn = document.getElementById("zaloBtn");
+const scheduleTab = document.getElementById("scheduleTab");
+const serviceTab = document.getElementById("serviceTab");
+const noteTab = document.getElementById("noteTab");
+const SCRIPT_URL="https://script.google.com/macros/s/AKfycbzbZJreH7NRmEShF14OM0nWVTvI5-eUpzqyDdVBoCZaDrJD3MVt-d9Do03jAIoSNwLv/exec";
+function showPopup(){
+  document.getElementById("successPopup").style.display="flex";
+}
+
+function closePopup(){
+  document.getElementById("successPopup").style.display="none";
+  goBack(); // quay về danh sách tour
+}
+// giữ nguyên object tours của bạn ở đây (KHÔNG SỬA)
+const tours = {
+
+honnua:{
+title:"Tour Hòn Nưa",
+img:"https://i.postimg.cc/NF3y1cT7/z7680420359383-15aef0bc328ab9f4561b6aeb5f027186.jpg",
+prices:[599000,499000,449000],
+schedule:[
+"  Buổi sáng",
+"07:00 Ghé Safe lựa đồ chụp ảnh sống ảo ( chí phí phát sinh) ",
+
+" - Khách tự túc di chuyển vào bè nổi Vũng Rô",
+
+"08:30  Tập trung tại bè nổi Vũng Rô",
+"- HDV đón đoàn tại bè ",
+
+"09:00  Đảo Hòn Nưa",
+
+"- Check- in Hang Yến, Tham quan đảo, Chèo Sup ",
+
+
+"10:30 - Lặn ngắm san hô",
+
+" Buổi trưa",
+
+"11:30-12:00  Ăn trưa hải sản trên bè nổi Vũng Rô ",
+
+"- Nghỉ ngơi tại nhà hàng",
+
+"- Kết Thúc Tour",
+],
+services:["Cano đưa đón 2 chiều","Ăn trưa","HDV kiêm chụp ảnh & quay video","Khăn lạnh & nước suối","Lặn ngắm san hô", "Chèo sup miễn phí"],
+notes:[]
+},
+
+honnuavip:{
+title:"Tour Hòn Nưa VIP",
+img:"https://i.postimg.cc/KzFpR8nd/IMG-9796.jpg",
+prices:[799000,699000,649000],
+schedule:[
+"  Buổi sáng",
+"06:30 Đón khách tại khách sạn trung tâm TP Tuy Hòa",
+
+"- Ăn sáng ( bánh hỏi & cháo lòng, bánh canh hẹ, cơm gà) khách có thể tự chọn",
+
+"07:00  Ghé Safe lựa đồ chụp ảnh sống ảo miễn phí",
+ 
+"08:30  Tập trung tại bè nổi Vũng Rô",
+
+"09:00  Đi Cano ra đảo Hòn Nưa",
+
+"- Check-in Hang Yến, Tham quan đảo, Chèo Sup ",
+
+"10:30  Lặn ngắm san hô",
+
+"Buổi trưa",
+
+"11:30-12:00  Ăn trưa hải sản trên bè nổi Vũng Rô ",
+
+"- Nghỉ ngơi tại nhà hàng",
+
+"Buổi chiều",
+
+"15:00  Xe đưa khách về lại trung tâm TP Tuy Hòa ",
+
+"- Tham Quan đặc sản Phú Yên",
+],
+services:["Cano đưa đón 2 chiều","Ăn trưa"," Ăn sáng ","HDV Chụp ảnh & quay video riêng"," Xe đưa đón", " Thuê đồ tại Nhà Safe ", "Khăn lạnh & nước suối"],
+notes:[]
+},
+
+culao:{
+title:"Tour Cù Lao Mái Nhà",
+img:"https://i.postimg.cc/QtNcthkd/z7680426509652-7aac57fa6df8e4d0b3e6e7d063750faa.jpg",
+prices:[599000,499000,449000],
+schedule:[
+"  Buổi sáng",
+
+"07:00 Ghé Safe lựa đồ chụp ảnh sống ảo ( chí phí phát sinh) ",
+
+" Khách tự túc di chuyển đến bến tàu",
+
+"08:30  Tập trung tại bến tàu Phước Đồng",
+
+"- HDV đón đoàn tại bến tàu ",
+
+"09:00  Check-in đảo Cù Lao Mái Nhà",
+
+"- Trecking Hồ Vô Cực, Tham quan đảo, Chèo Sup, Chụp ảnh Flycam ",
+
+"11:00 - 11:30 - Lặn ngắm san hô",
+
+" Buổi trưa",
+
+"11:30-12:00  Ăn trưa hải sản trên đảo ",
+
+"- Nghỉ ngơi tại đảo",
+
+"15:00 Lên cano về lại đất liền & kết thúc tour",
+
+],
+services:["Cano đưa đón 2 chiều","Ăn trưa","HDV Chụp ảnh & quay video ","Nước suối & Khăn"],
+notes:[]
+},
+
+culaovip:{
+title:"Tour Cù Lao VIP",
+img:"https://i.postimg.cc/pLpwHrZC/z7679179315246-5c53b7092c0ed4d34c50c22f242ef05c.jpg",
+prices:[799000,699000,649000],
+schedule:[
+"  Buổi sáng",
+"06:30 Đón khách tại khách sạn trung tâm TP Tuy Hòa",
+
+"- Ăn sáng ( Bánh hỏi & cháo lòng, Bánh canh hẹ, Cơm gà) khách có thể tự chọn",
+
+"07:00  Ghé Safe lựa đồ chụp ảnh sống ảo miễn phí",
+
+"08:30  Tập trung tại bến tàu Phước Đồng",
+
+"09:00  Check-in đảo Cù Lao Mái Nhà",
+
+"- Trecking Hồ Vô Cực, Tham quan đảo, Chèo Sup ",
+
+"11:00 - 11:30 - Lặn ngắm san hô",
+
+" Buổi trưa",
+
+"11:30-12:00  Ăn trưa hải sản trên đảo ",
+
+"- Nghỉ ngơi tại đảo",
+
+"15:00 Khách sẽ lên Cano về lại bến tàu Phước Đồng",
+
+"16:00 Xe đưa khách về lại trung tâm TP Tuy Hòa ",
+
+"- Tham Quan đặc sản Phú Yên",
+],
+services:["Cano đưa đón 2 chiều","HDV chụp ảnh & quay video riêng","Ăn trưa tại Đảo"," Nước suối & khăn"," Thuê đồ tại Nhà Safe"," Xe đưa đón"],
+notes:[]
+},
+
+camp:{
+title:"Tour Camping Cù Lao",
+img:"https://i.postimg.cc/MGGvxyLC/IMG-9790.jpg",
+prices:[699000,599000,549000],
+schedule:[
+" Buổi chiều",
+
+"14:45  Đón khách tại bến tàu Phước Đồng ",
+
+
+"15:30  Check-in đảo , Khách tắm biển tự do, Chèo sup ",
+
+"- Chụp ảnh Flycam , Ngắm Hoàng Hôn ",
+
+"17:00  Tắm lại nước ngọt trên đảo",
+
+"- Safe sẽ hướng dẫn nhặt củi tối đốt lửa trại",
+
+"18:00 Ăn tối hải sản trước lều",
+
+"  Buổi sáng",
+
+"06:00  Trecking Hồ Vô Cực, Ăn sáng( Mì Mực) ",
+
+"- Chụp ảnh, tắm biển ",
+
+"08:30  Về lại đất liền kết thúc tour ",
+],
+services:["Lều chống mưa, chống mũi (chăn + gối + tấm lót cách nhiệt)"," Cano 2 chiều", " HDV chụp ảnh & quay video flycam","Ăn Tối","Ăn Sáng","Nước suối & khăn"],
+notes:[]
+},
+canhnam:{
+title:"Tour Đảo Cánh Nam",
+img:"https://i.postimg.cc/qqNFdZsP/z7679266364738-ba000a57f956e11ddda537911a7ce002.jpg",
+prices:[850000,799000,699000],
+schedule:[
+"06:30 Đón khách tại khách sạn trung tâm TP Tuy Hòa",
+
+"- Ăn sáng ( Bánh hỏi & cháo lòng, Bánh canh hẹ, Cơm gà) khách có thể tự chọn",
+
+"07:00  Ghé Safe lựa đồ chụp ảnh sống ảo miễn phí",
+
+"08:30  Tập trung tại bè nổi Vũng Rô",
+
+"09:00  Đảo Hòn Nưa",
+
+"- Check- in Hang Yến, Tham quan đảo, Chèo Sup ",
+
+
+"10:30 - Lặn ngắm san hô",
+
+" Buổi trưa",
+
+"11:30-12:00  Ăn trưa hải sản trên bè nổi Vũng Rô ",
+
+"- Nghỉ ngơi tại nhà hàng",
+
+" Buổi chiều",
+
+"13:30  Tham quan Mũi Điện ",
+
+"- Check-in Cung Đường biển đẹp nhất Phú Yên  ",
+
+"16:00  Xe đưa khách về lại trung tâm TP Tuy Hòa ",
+
+"16:30  Tham Quan đặc sản Phú Yên",
+],
+services:["Cano đưa đón 2 chiều","Ăn trưa"," Ăn sáng ","HDV Chụp ảnh & quay video riêng"," Xe đưa đón", " Thuê đồ tại Nhà Safe ", "Khăn lạnh & nước suối"],
+notes:["Khách có thể thay đổi lịch trình sang ngắm Bình Minh tại Mũi Điện rồi đi Hòn Nưa"]
+},
+
+canhbac:{
+title:"Tour Đảo Cánh Bắc",
+img:"https://i.postimg.cc/Rh2cJgj2/z7679198772085-cd9f8f0c3d30779fc5bea5ac2e586f83.jpg",
+prices:[850000,799000,699000],
+schedule:[
+"  Buổi sáng",
+"07:00  Đón khách tại khách sạn trung tâm TP Tuy Hòa",
+
+"- Ghé Safe lựa đồ chụp ảnh sống ảo miễn phí",
+
+"08:30  Tập trung tại bến tàu Phước Đồng",
+
+"09:00  Check-in đảo Cù Lao Mái Nhà ",
+
+"- Tham Quan Hồ Vô Cực, Chụp ảnh chèo sup, Quay Flycam ",
+
+"10:30 - Lặn ngắm san hô",
+
+" Buổi trưa",
+
+"11:30-12:00  Ăn trưa hải sản trên đảo ",
+
+"- Nghỉ ngơi trên đảo",
+
+" Buổi chiều",
+
+"14:00 Tham quan làng chài Hòn Yến ",
+
+"15:00  Xe đưa khách về lại trung tâm TP Tuy Hòa ",
+
+"- Tham Quan Tháp Nginh Phong",
+
+"16:30  Tham Quan đặc sản Phú Yên",
+],
+services:["Cano đưa đón 2 chiều","HDV chụp ảnh & quay video riêng","Ăn trưa tại Đảo"," Nước suối & khăn"," Thuê đồ tại Nhà Safe"," Xe đưa đón"],
+notes:[]
+},
+
+};
+let currentTour,currentPrice=0;
+
+function showTour(id){
+let t=tours[id];
+currentTour=t;
+
+title.innerText=t.title;
+img.src=t.img;
+
+renderTabs(t);
+
+if(id === "camp"){
+  qty.value = 2;
+}else{
+  qty.value = 4;
+}
+name.value="";
+phone.value="";
+date.value="";
+
+update();
+
+list.style.display="none";
+detail.style.display="block";
+document.querySelector(".back-btn").style.display="block";
+}
+
+function renderTabs(t){
+scheduleTab.innerHTML="";
+t.schedule.forEach(s=>{
+let div=document.createElement("div");
+
+if(s.includes("Buổi")){
+div.innerHTML="<b>"+s+"</b>";
+}else{
+div.innerHTML="📍 "+s;
+}
+
+div.style.marginBottom="6px";
+scheduleTab.appendChild(div);
+});
+
+serviceTab.innerHTML="";
+t.services.forEach(s=>{
+serviceTab.innerHTML+="✔ "+s+"<br>";
+});
+
+noteTab.innerHTML="";
+t.notes.forEach(n=>{
+noteTab.innerHTML+="⚠ "+n+"<br>";
+});
+}
+
+function openTab(id,el){
+document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+document.querySelectorAll(".tab-content").forEach(c=>c.classList.remove("active"));
+
+el.classList.add("active");
+document.getElementById(id).classList.add("active");
+}
+
+function goBack(){
+list.style.display="block";
+detail.style.display="none";
+document.querySelector(".back-btn").style.display="none";
+}
+
+function update(){
+let q = parseInt(qty.value) || 1;
+
+let index = 0;
+
+// 👉 kiểm tra nếu là 2 tour đặc biệt
+if(currentTour.title === "Tour Đảo Cánh Nam" || currentTour.title === "Tour Đảo Cánh Bắc"){
+
+    if(q >= 10 && q <= 19) index = 1;
+    if(q >= 20) index = 2;
+
+}else{
+
+    // 👉 tour bình thường (giữ nguyên)
+    if(q >= 11) index = 1;
+    if(q >= 20) index = 2;
+}
+
+currentPrice = currentTour.prices[index];
+
+price.innerText = "Giá: " + currentPrice.toLocaleString() + "đ / khách";
+total.innerText = "Tổng: " + (currentPrice * q).toLocaleString() + "đ";
+guest.innerText = "Số khách: " + q;
+
+updateZalo();
+}
+
+
+
+function updateZalo(){
+let text=
+"Đặt tour: "+title.innerText+
+"%0A👤 "+name.value+
+"%0A📞 "+phone.value+
+"%0A📅 "+date.value+
+"%0A👥 "+qty.value+
+"%0A💰 "+total.innerText;
+
+zaloBtn.href="https://zalo.me/0399008848?text="+text;
+}
+
+function bookTour(){
+let data={
+name:name.value,
+phone:phone.value,
+tour:title.innerText,
+date:date.value,
+qty:qty.value,
+total:total.innerText
+};
+
+fetch(SCRIPT_URL,{
+method:"POST",
+body:JSON.stringify(data)
+})
+.then(()=>{
+  showPopup();
+})
+.catch(()=>alert("Lỗi gửi đơn"));
+}
+function changeQty(num){
+  let q = parseInt(qty.value) || 1;
+  q += num;
+
+  if(q < 1) q = 1;
+
+  qty.value = q;
+  update();
+}
+</script>
+<!-- Footer Thông tin liên hệ -->  
+<footer>  
+  <div class="contact-section">  
+    <h2>Thông Tin Liên Hệ</h2>  
+
+    <div class="quick-contact">  
+      <p><strong>🌿 Safe Tour</strong></p>  
+      <p><strong>Cần tư vấn nhanh? Safe chốt tour & giữ chỗ liền ạ.</strong></p>  
+      <p>Đón/trả tận nơi · Tour riêng · HDV kiêm “phó nháy”</p>  
+
+      <button class="btn-contact" onclick="window.location.href='tel:0399008848'">
+        📞 Gọi 0399008848
+      </button>  
+    </div>  
+  
+    <div class="info-contact">  
+      <p><strong>Safe Tour</strong></p>  
+      <p><span>📍</span> 152 Lý Thường Kiệt, P.Tuy Hòa, Đắk Lắk</p>  
+      <p><span>📞</span> 0399008848</p>  
+      <p><span>✉️</span> safetour@gmail.com</p>  
+
+      <button style="margin-top:10px; background:#1d3145; color:#aad5aa; padding:8px 15px; border:none; border-radius:10px; cursor:pointer;" onclick="goBack()">
+        🧭 Danh sách tour
+      </button>  
+
+      <button style="margin-top:10px; background:#1d3145; color:#aad5aa; padding:8px 15px; border:none; border-radius:10px; cursor:pointer;" onclick="window.open('https://zalo.me/0399008848')">
+        💬 Tư vấn nhanh
+      </button>  
+    </div>  
+
+    <div class="copy">  
+      © 2026 Safe Tour<br />  
+      Hotline/Zalo: 0399008848  
+    </div>  
+  </div>  
+</footer>  
+  
+<!-- Thanh điều hướng dưới cùng -->  
+<nav class="bottom-nav">  
+  <button class="active" onclick="goBack()">  
+    <span>🏠</span>  
+    Trang chủ  
+  </button>  
+
+  <button onclick="goBack()">  
+    <span>🧭</span>  
+    Tour  
+  </button>  
+
+  <button class="call-btn" onclick="window.location.href='tel:0399008848'">  
+    <span>📞</span>  
+    Gọi ngay  
+  </button>  
+</nav>
+<div id="successPopup" style="
+  display:none;
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.5);
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+">
+  <div style="
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    width:300px;
+  ">
+    <h3>🎉 Thành công</h3>
+    <p>Cảm ơn quý khách,<br>Safe Tour đã nhận thông tin ❤️</p>
+    <button onclick="closePopup()" style="
+      margin-top:10px;
+      padding:10px 20px;
+      border:none;
+      background:#31b220;
+      color:white;
+      border-radius:10px;
+    ">OK</button>
+  </div>
+</div>
+</body>
+</html>
