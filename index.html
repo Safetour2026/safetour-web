@@ -514,7 +514,7 @@ margin-top:5px;
       </div>
 
       <div class="bottom">
-        <span class="price">699.000đ/khách</span>
+        <span class="price">799.000đ/khách</span>
         <button>Xem chi tiết</button>
       </div>
     </div>
@@ -962,19 +962,21 @@ let q = parseInt(qty.value) || 1;
 
 let index = 0;
 
-// 👉 kiểm tra nếu là 2 tour đặc biệt
-if(currentTour.title === "Tour Đảo Cánh Nam" || currentTour.title === "Tour Đảo Cánh Bắc"){
+if(currentTour.title === "Tour Camping Cù Lao"){
+
+    if(q >= 6 && q <= 10) index = 1;
+    if(q >= 11) index = 2;
+
+}else if(currentTour.title === "Tour Đảo Cánh Nam" || currentTour.title === "Tour Đảo Cánh Bắc"){
 
     if(q >= 10 && q <= 19) index = 1;
     if(q >= 20) index = 2;
 
 }else{
 
-    // 👉 tour bình thường (giữ nguyên)
     if(q >= 11) index = 1;
     if(q >= 20) index = 2;
 }
-
 currentPrice = currentTour.prices[index];
 
 price.innerText = "Giá: " + currentPrice.toLocaleString() + "đ / khách";
