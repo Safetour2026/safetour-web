@@ -374,6 +374,57 @@ margin-top:5px;
   font-weight: bold;
 
 }
+/* ===== TIMELINE ===== */
+.timeline{
+  position: relative;
+  padding-left: 25px;
+}
+
+.timeline::before{
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e5e7eb;
+}
+
+.timeline-item{
+  position: relative;
+  margin-bottom: 12px;
+  padding-left: 10px;
+}
+
+.timeline-item::before{
+  content: "";
+  position: absolute;
+  left: -18px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  background: #0ea5e9;
+  border-radius: 50%;
+}
+
+.timeline-time{
+  font-weight: 700;
+  color: #0ea5e9;
+  margin-right: 6px;
+}
+.day-card{
+  background: #fff;
+  border-radius: 16px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.day-title{
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #0ea5e9;
+}
 </style>
 </head>
 
@@ -565,7 +616,29 @@ margin-top:5px;
       </div>
     </div>
   </div>
+  
+ <div class="tour-card" onclick="showTour('Phuyen3N2D')">
+    <img src="https://i.postimg.cc/L5C2d6b7/IMG-9789.jpg">
+    <div class="tour-body">
+      <div class="tour-top">
+        <span class="tour-code"> Phú Yên</span>
+      </div>
 
+      <h3>Tour Tham Quan Phú Yên 3N2D</h3>
+      <p>Cù Lao + Hòn Yến + Hòn Nưa + Mũi Điện + Trung tâm Thành Phố.</p>
+
+      <div class="info">
+        📍 Phú Yên <br>
+        📅 Hàng ngày
+      </div>
+
+      <div class="bottom">
+        <span class="price">2.799.000đ/khách</span>
+        <button>Xem chi tiết</button>
+      </div>
+    </div>
+  </div>
+  
 </div>
 </div> <!-- đóng #list -->
 
@@ -888,7 +961,107 @@ schedule:[
 services:["Cano đưa đón 2 chiều","HDV chụp ảnh & quay video riêng","Ăn trưa tại Đảo"," Nước suối & khăn"," Thuê đồ tại Nhà Safe"," Xe đưa đón"],
 notes:[]
 },
+Phuyen3N2D:{
+title:"Tour Tham Quan Phú Yên 3N2D",
+img:"https://i.postimg.cc/L5C2d6b7/IMG-9789.jpg",
+prices:[2799000,2599000],
 
+dayImages:[
+"https://i.postimg.cc/DZQwNhFF/z4881502224233b8f0add711af8631ec2376a47c3912f0-1701335531281661134921.jpg",
+"https://i.postimg.cc/Y9Qvwg65/tour-cam-trai-dem-bai-mon-ngam-binh-minh-dau-tien-mui-dien-quy-nhon-tourist-6.jpg",
+"https://i.postimg.cc/ZKSr0Y05/z7680426509652-7aac57fa6df8e4d0b3e6e7d063750faa.jpg"
+],
+prices:[2799000,2599000],
+schedule:[
+"Ngày 1: Đón Sân Bay - City Tour( Ăn trưa - tối)  ",                               
+
+" Buổi trưa",
+
+"- Xe và HDV sẽ đón khách tại sân bay",
+
+"- Ăn trưa cơm Niêu Tuy Hòa ",
+
+"13:30  Check-in nhận phòng khách sạn ",
+
+"14:30  Tham quan Núi Nhạn  ",
+
+" Buổi chiều",
+
+"16:00  Tham quan Tháp Nghinh Phong ",
+
+"- Ăn tối đặc sản Cá Ồ Nướng cuốn bánh tráng Phú Yên",
+
+" Buổi Tối",
+
+" - Quý khách tự do tham quan thành phố về đêm ",
+
+"- Nghỉ ngơi tại khách sạn",
+
+"Ngày 2: Hải Đăng Mũi Điện - Vịnh Vũng Rô - Hòn Nưa",
+
+" Buổi sáng",
+ 
+" 04:00  Xe và HDV đón đoàn tại khách sạn trung tâm thành phố",
+
+" - Khởi hành đi Mũi Điện ( Ngắm bình minh)",
+
+"08:00  Tập trung tại Vũng Rô ăn sáng ",
+
+"08:30  Đi Cano ra đảo Hòn Nưa ",
+
+"- Check-in Hang Yến, Tham quan đảo, Chèo Sup ",
+
+"10:30  Lặn ngắm san hô",
+
+"Buổi trưa",
+
+"11:30-12:00  Ăn trưa hải sản trên bè nổi Vũng Rô ",
+
+"- Nghỉ ngơi tại nhà hàng",
+
+"Buổi chiều",
+
+"13:30  Khách Check-in Cung đường biển đẹp nhất Phú Yên ",
+
+"15:00 Tham quan Bờ Kè Xóm Rớ ",
+
+"- Xe đưa khách về lại trung tâm TP Tuy Hòa  ",
+
+"  Ăn tối Bánh canh hẹ ",
+
+" - Khách tự do tham quan thành phố ",
+
+" Ngày 3: Ghềnh Đá Đĩa - Nhà thờ Mằng Lăng - Cù Lao Mái Nhà ",
+
+" Buổi sáng",
+
+"06:30 Xe đón đoàn tại khách sạn",
+
+"- Ăn sáng cơm gà ",
+
+"08:00 Tham quan Nhà thờ Mằng Lăng ",
+
+"09:30 Tham quan Ghềnh Đá Đĩa ",
+
+"11:30 Check-in đảo Cù Lao Mái Nhà ",
+
+"- Ăn trưa tại đảo",
+
+"- Tham quan Hồ Vô Cực ",
+
+"- Lên Cano đi lặn ngắm san hô",
+
+"16:00 Về lại trung tâm thành phố ",
+
+
+"- Tham quan đặc sản địa phương ",
+
+"- Kết thúc Tour ",
+
+],
+services:["Cano đưa đón 2 chiều","HDV chụp ảnh & quay video riêng","Ăn trưa tại Đảo"," Nước suối & khăn"," Thuê đồ tại Nhà Safe"," Xe đưa đón"],
+notes:[]
+},
 };
 let currentTour,currentPrice=0;
 
@@ -919,18 +1092,63 @@ document.querySelector(".back-btn").style.display="block";
 
 function renderTabs(t){
 scheduleTab.innerHTML="";
+let scheduleHTML = "";
+let currentDay = "";
+let dayIndex = -1;
 t.schedule.forEach(s=>{
-let div=document.createElement("div");
 
-if(s.includes("Buổi")){
-div.innerHTML="<b>"+s+"</b>";
+   if(s.toLowerCase().includes("ngày")){
+
+    dayIndex++;
+
+    if(currentDay !== ""){
+        scheduleHTML += `</div></div>`;
+    }
+
+    let imgHTML = "";
+
+    if(t.dayImages && t.dayImages[dayIndex]){
+        imgHTML = `<img src="${t.dayImages[dayIndex]}" class="day-img">`;
+    }
+
+    scheduleHTML += `
+        <div class="day-card">
+            ${imgHTML}
+            <div class="day-title">📅 ${s}</div>
+            <div class="timeline">
+    `;
+
+    currentDay = s;
 }else{
-div.innerHTML="📍 "+s;
-}
 
-div.style.marginBottom="6px";
-scheduleTab.appendChild(div);
+        let timeMatch = s.match(/^(\d{2}:\d{2})/);
+
+        if(timeMatch){
+            let time = timeMatch[0];
+            let content = s.replace(time, "").trim();
+
+            scheduleHTML += `
+                <div class="timeline-item">
+                    <span class="timeline-time">${time}</span>
+                    ${content}
+                </div>
+            `;
+        }else{
+            scheduleHTML += `
+                <div class="timeline-item">
+                    ${s}
+                </div>
+            `;
+        }
+    }
+
 });
+
+// đóng card cuối
+scheduleHTML += `</div></div>`;
+
+// render ra màn hình
+scheduleTab.innerHTML = scheduleHTML;
 
 serviceTab.innerHTML="";
 t.services.forEach(s=>{
@@ -966,6 +1184,10 @@ if(currentTour.title === "Tour Camping Cù Lao"){
 
     if(q >= 6 && q <= 10) index = 1;
     if(q >= 11) index = 2;
+
+}else if(currentTour.title === "Tour Tham Quan Phú Yên 3N2D"){
+
+    if(q >= 10) index = 1;
 
 }else if(currentTour.title === "Tour Đảo Cánh Nam" || currentTour.title === "Tour Đảo Cánh Bắc"){
 
