@@ -425,6 +425,7 @@ margin-top:5px;
   margin-bottom: 10px;
   color: #0ea5e9;
 }
+
 </style>
 </head>
 
@@ -439,17 +440,14 @@ margin-top:5px;
   </div>  
 
   <button class="book-tour">Book tour</button>  
-  <button class="book-schedule">Đặt Lịch</button>  
+  <button class="book-schedule" onclick="openForm()">Đặt Lịch</button> 
   <button class="menu-btn">&#9776;</button>  
 </header>
 
 <!-- LIST -->
   <div id="list">
 
-  <div class="title-bar">
-    🌿 TOUR PHÚ YÊN – HOT NHẤT
-  </div>
-  <div class="grid">
+  
 
   <!-- HÒN NƯA -->
   <div class="tour-card" onclick="showTour('honnua')">
@@ -640,7 +638,7 @@ margin-top:5px;
   </div>
 
   <div class="tour-card" onclick="showTour('Phuyen2N1D')">
-    <img src="https://i.postimg.cc/L5C2d6b7/IMG-9789.jpg">
+    <img src="https://i.postimg.cc/NjWvJ86S/IMG-9788.jpg">
     <div class="tour-body">
       <div class="tour-top">
         <span class="tour-code"> Phú Yên</span>
@@ -655,7 +653,31 @@ margin-top:5px;
       </div>
 
       <div class="bottom">
-        <span class="price">2.799.000đ/khách</span>
+        <span class="price">2.599.000đ/khách</span>
+        <button>Xem chi tiết</button>
+      </div>
+    </div>
+  </div>
+  
+<div class="tour-card" onclick="showTour('Phuyen3N2DVIP')">
+    <img src="https://i.postimg.cc/vT114h2y/IMG-2045.jpg">
+    <div class="tour-body">
+      <div class="tour-top">
+    
+        <span class="tour-code">VIP</span>
+        <span class="badge hot">🔥 VIP</span>
+      </div>
+
+      <h3>Tour Tham Quan Phú Yên 3N2D VIP </h3>
+      <p>Cù Lao + Hòn Yến + Hòn Nưa + Mũi Điện + Camping .</p>
+
+      <div class="info">
+        📍 Phú Yên <br>
+        📅 Hàng ngày
+      </div>
+
+      <div class="bottom">
+        <span class="price">3.499.000đ/khách</span>
         <button>Xem chi tiết</button>
       </div>
     </div>
@@ -710,6 +732,13 @@ margin-top:5px;
 </div>
 
 <script>
+  function openForm(){
+  document.getElementById("bookingPopup").style.display="flex";
+}
+
+function closeForm(){
+  document.getElementById("bookingPopup").style.display="none";
+}
   const title = document.getElementById("title");
 const img = document.getElementById("img");
 const list = document.getElementById("list");
@@ -1091,8 +1120,8 @@ notes:["Chuẩn bị đồ bơi, kem chống nắng, nón/kính, dép dễ đi; 
 
 Phuyen2N1D:{
 title:"Tour Tham Quan Phú Yên 2N1D",
-img:"https://i.postimg.cc/qqNFdZsP/z7679266364738-ba000a57f956e11ddda537911a7ce002.jpg",
-prices:[850000,799000,699000],
+img:"https://i.postimg.cc/NjWvJ86S/IMG-9788.jpg",
+prices:[2599000,2499000],
 
 dayImages:[
 "https://i.postimg.cc/DZQwNhFF/z4881502224233b8f0add711af8631ec2376a47c3912f0-1701335531281661134921.jpg",
@@ -1168,6 +1197,131 @@ schedule:[
 services:["Cano đưa đón 2 chiều","Ăn trưa trên đảo","Ăn trưa trên bè"," 2 bữa ăn sáng tại trung tâm thành phố ","HDV Chụp ảnh & quay video riêng"," Xe du lịch đưa đón khách", " Thuê đồ tại Nhà Safe ", "Khăn lạnh & nước suối","Vé vào cổng tham quan các địa điểm trong Tour" ],
 
 notes:["Khách có thể thay đổi lịch trình sang ngắm Bình Minh tại Mũi Điện rồi đi Hòn Nưa","Chuẩn bị đồ bơi, kem chống nắng, nón/kính, dép dễ đi; nên mang túi chống nước cho điện thoại","Thời gian có thể linh hoạt theo thời tiết & thuỷ triều để đảm bảo an toàn"]
+},
+Phuyen3N2DVIP:{
+title:"Tour Tham Quan Phú Yên 3N2D VIP",
+img:"https://i.postimg.cc/vT114h2y/IMG-2045.jpg",
+prices:[3699000,3499000],
+
+dayImages:[
+"https://i.postimg.cc/L832tW72/IMG-9791.jpg",
+"https://i.postimg.cc/D09YH2S4/bo-ke-xom-ro.jpg",
+"https://i.postimg.cc/ZKSr0Y05/z7680426509652-7aac57fa6df8e4d0b3e6e7d063750faa.jpg"
+],
+schedule:[
+"Ngày 1: ĐÓN BẾN XE – NHÀ THỜ MẰNG LĂNG – GHỀNH ĐÁ DĨA – ĐẦM Ô LOAN – CAMPING CÙ LAO MÁI NHÀ ( Ăn sáng - trưa - tối)  ",
+
+"Buổi sáng ",
+
+"- Xe và HDV sẽ đón khách tại bến xe",
+
+"06:00  Khách dùng điểm tâm sáng bánh hỏi & cháo lòng ",
+
+"08:30   Check-in Nhà thờ Mằng Lăng",
+
+"- Nhà thờ Mằng Lăng, Phú Yên, là một kỳ quan biết kể chuyện. Tới đó, sau khi choáng ngợp trước kiến trúc cổ kính của nhà thờ 131 năm tuổi, bạn sẽ được nghe câu chuyện về lịch sử nhà thờ, về sự hình thành của chữ Quốc ngữ.",
+
+"09:45 Check-in ghềnh đá đĩa  ",
+
+"- Ghành Đá Đĩa hay Ghềnh Đá Đĩa là một danh thắng thiên nhiên tại xã Tuy An Đông, tỉnh Đắk Lắk, Việt Nam. Địa điểm này là một đoạn bờ biển có các cột đá bazan hình lăng trụ, trông giống như những chiếc đĩa xếp chồng lên nhau.",
+
+"11:00 : Ăn trưa với thực đơn hải sản ở Đầm Ô Loan ",
+
+"- Nổi tiếng với món Sò Huyết Đầm Ô Loan trứ danh Phú Yên ",
+
+"14:00 Di chuyển qua bến tàu Phước Đồng ",
+
+"- Khách di chuyểnn bằng Cano qua đảo ( 10-15p )",
+
+"15:00  Bắt đầu chương trình qua Camping qua đêm trên đảo ( Ngắm bình minh – Hoàng hôn ) ",
+
+"15:30  Check-in đảo , Khách tắm biển tự do, Chèo Sup",
+
+"- Chụp ảnh Flycam , Ngắm Hoàng Hôn ",
+
+"17:00 Tắm lại nước ngọt trên đảo ",
+
+" - Safe sẽ hướng dẫn khách nhặt củi đốt lửa trại",
+
+"18:00 Ăn tối hải sản trước lều ",
+
+" Buổi sáng",
+
+"06:00 Trecking Hồ Vô Cực, Ăn sáng( Mì Mực) ",
+
+" - Chụp ảnh, tắm biển ",
+
+
+"Ngày 2: HÒN YẾN – NÚI NHẠN – BỜ KÈ SỚM RỚ  – ( ăn sáng - trưa - tối ) ",
+
+" Buổi sáng",
+ 
+"08:30   Xe và HDV đón đoàn tại bến tàu Phước Đồng ",
+
+"09:00   Check-in làng chài Hòn Yến ",
+
+" - Hòn Yến nằm ở Tuy An Đông, tỉnh Đắk Lắk, Việt Nam, nằm cách Trung tâm chỉ khoảng chừng 15 km về hướng Bắc. Đến đây tham quan mọi người sẽ được ngắm nhìn những rạn san hô với vẻ đẹp rực rỡ ngay trên cạn. Chắc chắn đây sẽ là khung cảnh mà hiếm có nơi nào có được.",
+
+"10:30 Tham quan Núi Nhạn ",
+
+"- Tháp Nhạn tọa lạc trên Núi Nhạn thuộc Phường Tuy Hoà, tỉnh Đắk Lắk. Núi Nhạn có độ cao khoảng 60m so với mực nước biển, chu vi chân núi khoảng 1,5km. Kiến trúc Tháp Nhạn là sự chuyển tiếp giữa phong cách kiến trúc Mỹ Sơn A1 và phong cách kiến trúc Bình Định, niên đại vào khoảng cuối thế kỷ XI đầu thế kỷ XII. Nhiều tác phẩm điêu khắc gắn với di tích Tháp Nhạn, trong đó, tiêu biểu nhất là đài thờ đặt trong lòng tháp thuộc phong cách nghệ thuật Tháp Mắm có niên đại vào khoảng thế kỷ XII. Tháp Nhạn gồm 3 phần: đế tháp, thân tháp và mái tháp. ",
+
+"Buổi trưa",
+
+"11:30 Ăn trưa tại Nhà Hàng ",
+
+"13:30 Check-in khách sạn – nghỉ ngơi ",
+
+"Buổi chiều",
+
+"16:00 Check-in Bờ Kè Xóm Rớ - Ngắm Hoàng hôn ",
+
+" - View cầu Hùng Vương ngắm Thành Phố ",
+
+"18:30 Ăn tối Cá Ồ nướng cuốn bánh tráng ( Đặc sản Phú Yên )",
+
+"  -	Tối dạo thành phố bằng xe điện ",
+
+" -	Về khách sạn nghỉ ngơi ",
+
+" NGÀY 3 : HÒN NƯA – CUNG ĐƯỜNG BIỂN ĐẸP NHẤT PHÚ YÊN – ĐẶC SẢN PHÚ YÊN -  KẾT THÚC TOUR  ",
+
+" Buổi sáng",
+
+"07:00 Xe và HDV sẽ đón đoàn tại khách sạn",
+
+"07:30  Ăn sáng Cơm gà  ",
+
+"-	Ghé Nhà Safe lựa dồ đi biển ",
+
+"09:00  Tập trung tại Bè nổi Vũng Rô ",
+
+"-	Check-in Hang Yến, Tham quan đảo, Chèo Sup ",
+
+"10:30  Lặn ngắm san hô",
+
+"Buổi trưa  ",
+
+"11:30  Ăn trưa hải sản trên bè nổi Vũng Rô",
+
+"-	Nghỉ ngơi tại nhà hàng",
+
+
+"Buổi chiều  ",
+
+"13:30  Khách Check-in Cung đường biển đẹp nhất Phú Yên",
+
+"15:00 Tham quan – mua sắm đặc sản Phú Yên ",
+
+"16:00  Tham quan chụp ảnh Tháp Nghinh Phong  ",
+
+"17:00    Ăn tối Bánh canh hẹ ",
+
+"18:00   Xe đón đoàn ra bến xe về lại Thành Phố Hồ Chí Minh ",
+],
+services:["Cano đưa đón 2 chiều","Ăn trưa trên đảo","Ăn trưa trên bè"," 2 bữa ăn sáng tại trung tâm thành phố ","HDV Chụp ảnh & quay video riêng"," Xe du lịch đưa đón khách", " Thuê đồ tại Nhà Safe ", "Khăn lạnh & nước suối","Vé vào cổng tham quan các địa điểm trong Tour"],
+
+notes:["Chuẩn bị đồ bơi, kem chống nắng, nón/kính, dép dễ đi; nên mang túi chống nước cho điện thoại","Thời gian có thể linh hoạt theo thời tiết & thuỷ triều để đảm bảo an toàn"]
 },
 
 };
@@ -1356,8 +1510,33 @@ function changeQty(num){
   if(q < 1) q = 1;
 
   qty.value = q;
-  update();
+  update();}
+ // 1. Các function khác (renderTours, showTour,...)
+
+// 2. DÁN sendForm Ở ĐÂY
+function sendForm(){
+  let data = {
+    name: document.getElementById("f_name").value,
+    phone: document.getElementById("f_phone").value,
+    date: document.getElementById("f_date").value,
+    qty: document.getElementById("f_qty").value,
+    note: document.getElementById("f_note").value,
+    type: "Tư vấn nhanh"
+  };
+
+  fetch(SCRIPT_URL,{
+    method:"POST",
+    body: JSON.stringify(data)
+  })
+  .then(()=>{
+    alert("✅ Safe Tour đã nhận thông tin, sẽ gọi lại sớm!");
+    closeForm();
+  })
+  .catch(()=>{
+    alert("❌ Lỗi gửi thông tin!");
+  });
 }
+
 </script>
 <!-- Footer Thông tin liên hệ -->  
 <footer>  
@@ -1441,6 +1620,83 @@ function changeQty(num){
       border-radius:10px;
     ">OK</button>
   </div>
+</div>
+<!-- POPUP FORM -->
+<div id="bookingPopup" style="
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.5);
+z-index:9999;
+justify-content:center;
+align-items:center;
+">
+
+<div style="
+background:white;
+width:90%;
+max-width:500px;
+border-radius:20px;
+overflow:hidden;
+font-family:'Poppins',sans-serif;
+">
+
+<!-- HEADER -->
+<div style="
+background:linear-gradient(135deg,#2bbf5a,#1e9e4a);
+color:white;
+padding:15px;
+position:relative;
+">
+<b>Để Safe gọi lại tư vấn</b><br>
+<span style="font-size:13px">Điền nhanh 30s – Safe gọi lại chốt tour ngay ạ.</span>
+
+<button onclick="closeForm()" style="
+position:absolute;
+right:10px;top:10px;
+border:none;
+background:rgba(255,255,255,0.2);
+color:white;
+width:30px;height:30px;
+border-radius:10px;
+cursor:pointer;
+">✕</button>
+</div>
+
+<!-- BODY -->
+<div style="padding:15px">
+
+<p style="font-size:13px;color:#555">
+Anh/Chị cho Safe Tour xin ngày đi + số khách + tour là Safe báo giá & giữ chỗ liền ạ.
+</p>
+
+<input id="f_name" placeholder="Họ và tên" style="width:100%;padding:12px;margin:5px 0;border-radius:10px;border:1px solid #ddd">
+
+<input id="f_phone" placeholder="Số điện thoại" style="width:100%;padding:12px;margin:5px 0;border-radius:10px;border:1px solid #ddd">
+
+<div style="display:flex;gap:10px">
+<input id="f_date" type="date" style="flex:1;padding:12px;border-radius:10px;border:1px solid #ddd">
+<input id="f_qty" type="number" placeholder="Số khách" style="flex:1;padding:12px;border-radius:10px;border:1px solid #ddd">
+</div>
+
+<textarea id="f_note" placeholder="Nội dung cần tư vấn..." style="width:100%;margin-top:10px;padding:12px;border-radius:10px;border:1px solid #ddd"></textarea>
+
+<button onclick="sendForm()" style="
+width:100%;
+margin-top:15px;
+padding:12px;
+border:none;
+background:#2bbf5a;
+color:white;
+font-weight:bold;
+border-radius:25px;
+">
+✔ Gửi thông tin
+</button>
+
+</div>
+</div>
 </div>
 </body>
 </html>
