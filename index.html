@@ -237,21 +237,29 @@ font-weight:700;
 }
 /* BACK BUTTON */
 .back-btn{
-display:none;
-position:fixed;
-top:15px;
-left:15px;
-width:42px;
-height:42px;
-border:none;
-border-radius:50%;
-font-size:22px;
-color:#fff;
-background:rgba(0,0,0,0.5);
-backdrop-filter:blur(10px);
-box-shadow:0 4px 12px rgba(0,0,0,0.3);
-z-index:9999;
-cursor:pointer;
+  display:none;
+  position:fixed;
+  top:15px;
+  left:15px;
+  width:45px;
+  height:45px;
+  border:none;
+  border-radius:50%;
+
+  font-size:22px;
+  color:white;
+
+  background:transparent; /* 👉 trong suốt hoàn toàn */
+  box-shadow:none;       /* bỏ bóng */
+
+  z-index:9999;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+/* hover nhẹ cho desktop */
+.back-btn:hover{
+  transform:scale(1.2);
 }
 
 /* HEADER */
@@ -1642,6 +1650,28 @@ cards.forEach(c=>{
   c.style.transform = "translateY(40px)";
   c.style.transition = "0.5s";
 });
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener("touchstart", function(e){
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+document.addEventListener("touchend", function(e){
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+});
+
+function handleSwipe(){
+  // vuốt từ trái sang phải
+  if(touchEndX - touchStartX > 80){
+    
+    // chỉ khi đang ở trang detail mới cho back
+    if(detail.style.display === "block"){
+      goBack();
+    }
+  }
+}
 </script>
 <!-- Footer Thông tin liên hệ -->  
 <footer>  
