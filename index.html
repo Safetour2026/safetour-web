@@ -8,19 +8,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+
 .tour-card{
   background:white;
   border-radius:20px;
   overflow:hidden;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  box-shadow:0 10px 25px rgba(0,0,0,0.12);
   transition:0.3s;
+  cursor:pointer;
 }
-.tour-card:hover{transform:translateY(-5px);}
 
-.tour-card img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
+.tour-card:hover{
+  transform:translateY(-8px) scale(1.02);
 }
 
 .tour-body{padding:15px;}
@@ -71,11 +71,12 @@
 }
 
 .bottom button{
-  background:#ff914d;
+  background:linear-gradient(45deg,#ff7a00,#ff914d);
   border:none;
   color:white;
   padding:8px 15px;
-  border-radius:15px;
+  border-radius:20px;
+  font-weight:bold;
 }
 .zalo{
   background:#0084ff;
@@ -108,8 +109,8 @@
   color:white;
   border-radius:10px;
 }
-* {
-  font-family: "Times New Roman", Times, serif !important;
+*{
+  font-family:'Poppins',sans-serif;
 }
 /* FOOTER */
 footer {  
@@ -236,15 +237,11 @@ cursor:pointer;
 
 /* HEADER */
 header{
-display:flex;
-align-items:center;
-gap:10px;
-padding:10px;
-background:#eef7f9;
-position:sticky;
-top:0;
-z-index:1000;
-border-bottom:1px solid #ddd;
+  background:white;
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
+  position:sticky;
+  top:0;
+  z-index:999;
 }
 
 .logo-img{
@@ -425,6 +422,45 @@ margin-top:5px;
   margin-bottom: 10px;
   color: #0ea5e9;
 }
+.hero{
+  height:280px;
+  background:url('https://i.postimg.cc/L5C2d6b7/IMG-9789.jpg') center/cover;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.4);
+}
+
+.hero-content{
+  position:relative;
+  color:white;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:24px;
+  font-weight:700;
+}
+
+.hero p{
+  margin:10px 0;
+}
+
+.hero button{
+  background:#ff7a00;
+  border:none;
+  padding:10px 20px;
+  border-radius:20px;
+  color:white;
+  font-weight:bold;
+}
 
 </style>
 </head>
@@ -434,15 +470,17 @@ margin-top:5px;
 <header>  
   <img src=https://i.postimg.cc/fbFTN1mN/z7679137568925-b3c1a8c6e52d31d96640c53ca184d6b4.jpg alt="Safe Tour Logo" class="logo-img" />  
   
-  <div class="title">  
-    Safe Tour<br />  
-    <span class="address">Tour đảo Phú Yên</span>  
-  </div>  
+ <div style="margin-left:10px">
+    <div class="title">SafeTour Phú Yên</div>
+    <div class="address">Du lịch trải nghiệm</div>
+  </div>
 
-  <button class="book-tour">Book tour</button>  
+ 
   <button class="book-schedule" onclick="openForm()">Đặt Lịch</button> 
    
 </header>
+
+
 
 <!-- LIST -->
   <div id="list">
@@ -795,7 +833,7 @@ schedule:[
 "- Kết Thúc Tour",
 ],
 services:["Cano đưa đón 2 chiều","Ăn trưa","HDV kiêm chụp ảnh & quay video","Khăn lạnh & nước suối","Lặn ngắm san hô", "Chèo sup miễn phí"],
-notes:["Chuẩn bị đồ bơi, kem chống nắng, nón/kính, dép dễ đi; nên mang túi chống nước cho điện thoại","Thời gian có thể linh hoạt theo thời tiết & thuỷ triều để đảm bảo an toàn"]
+notes:["Chuẩn bị đồ bơi, kem chống nắng, nón/kính, dép dễ đi; nên mang túi chống nước cho điện thoại","Thời gian có thể linh hoạt theo thời tiết & thuỷ triều để đảm bảo an toàn","Đặc Biệt: Hai người lớn dẫn theo 1 bé từ 6-9 tuổi sẽ được miễn phí"]
 },
 
 honnuavip:{
@@ -831,7 +869,7 @@ schedule:[
 "- Tham Quan đặc sản Phú Yên",
 ],
 services:["Cano đưa đón 2 chiều","Ăn trưa"," Ăn sáng ","HDV Chụp ảnh & quay video riêng"," Xe đưa đón", " Thuê đồ tại Nhà Safe ", "Khăn lạnh & nước suối"],
-notes:["Chuẩn bị đồ bơi, kem chống nắng, nón/kính, dép dễ đi; nên mang túi chống nước cho điện thoại","Thời gian có thể linh hoạt theo thời tiết & thuỷ triều để đảm bảo an toàn"]
+notes:["Chuẩn bị đồ bơi, kem chống nắng, nón/kính, dép dễ đi; nên mang túi chống nước cho điện thoại","Thời gian có thể linh hoạt theo thời tiết & thuỷ triều để đảm bảo an toàn","Đặc Biệt: Hai người lớn dẫn theo 1 bé từ 6-9 tuổi sẽ được miễn phí"]
 },
 
 culao:{
@@ -865,7 +903,7 @@ schedule:[
 
 ],
 services:["Cano đưa đón 2 chiều","Ăn trưa","HDV Chụp ảnh & quay video ","Nước suối & Khăn"],
-notes:["Chuẩn bị đồ bơi, kem chống nắng, nón/kính, dép dễ đi; nên mang túi chống nước cho điện thoại","Thời gian có thể linh hoạt theo thời tiết & thuỷ triều để đảm bảo an toàn"]
+notes:["Chuẩn bị đồ bơi, kem chống nắng, nón/kính, dép dễ đi; nên mang túi chống nước cho điện thoại","Thời gian có thể linh hoạt theo thời tiết & thuỷ triều để đảm bảo an toàn","Đặc Biệt: Hai người lớn dẫn theo 1 bé từ 6-9 tuổi sẽ được miễn phí"]
 },
 
 culaovip:{
@@ -901,7 +939,7 @@ schedule:[
 "- Tham Quan đặc sản Phú Yên",
 ],
 services:["Cano đưa đón 2 chiều","HDV chụp ảnh & quay video riêng","Ăn trưa tại Đảo"," Nước suối & khăn"," Thuê đồ tại Nhà Safe"," Xe đưa đón"],
-notes:["Chuẩn bị đồ bơi, kem chống nắng, nón/kính, dép dễ đi; nên mang túi chống nước cho điện thoại","Thời gian có thể linh hoạt theo thời tiết & thuỷ triều để đảm bảo an toàn"]
+notes:["Chuẩn bị đồ bơi, kem chống nắng, nón/kính, dép dễ đi; nên mang túi chống nước cho điện thoại","Thời gian có thể linh hoạt theo thời tiết & thuỷ triều để đảm bảo an toàn","Đặc Biệt: Hai người lớn dẫn theo 1 bé từ 6-9 tuổi sẽ được miễn phí"]
 },
 
 camp:{
@@ -933,7 +971,7 @@ schedule:[
 "08:30  Về lại đất liền kết thúc tour ",
 ],
 services:["Lều chống mưa, chống mũi (chăn + gối + tấm lót cách nhiệt)"," Cano 2 chiều", " HDV chụp ảnh & quay video flycam","Ăn Tối","Ăn Sáng","Nước suối & khăn"],
-notes:["Chuẩn bị đồ bơi, kem chống nắng, nón/kính, dép dễ đi; nên mang túi chống nước cho điện thoại","Thời gian có thể linh hoạt theo thời tiết & thuỷ triều để đảm bảo an toàn"]
+notes:["Chuẩn bị đồ bơi, kem chống nắng, nón/kính, dép dễ đi; nên mang túi chống nước cho điện thoại","Thời gian có thể linh hoạt theo thời tiết & thuỷ triều để đảm bảo an toàn","Đặc Biệt: Hai người lớn dẫn theo 1 bé từ 6-9 tuổi sẽ được miễn phí"]
 },
 
 canhnam:{
@@ -972,7 +1010,7 @@ schedule:[
 "16:30  Tham Quan đặc sản Phú Yên",
 ],
 services:["Cano đưa đón 2 chiều","Ăn trưa tại bè"," Ăn sáng tại trung tâm ","HDV Chụp ảnh & quay video riêng"," Xe du lịch đưa đón khách", " Thuê đồ tại Nhà Safe ", "Khăn lạnh & nước suối"],
-notes:["Khách có thể thay đổi lịch trình sang ngắm Bình Minh tại Mũi Điện rồi đi Hòn Nưa","Chuẩn bị đồ bơi, kem chống nắng, nón/kính, dép dễ đi; nên mang túi chống nước cho điện thoại","Thời gian có thể linh hoạt theo thời tiết & thuỷ triều để đảm bảo an toàn"]
+notes:["Khách có thể thay đổi lịch trình sang ngắm Bình Minh tại Mũi Điện rồi đi Hòn Nưa","Chuẩn bị đồ bơi, kem chống nắng, nón/kính, dép dễ đi; nên mang túi chống nước cho điện thoại","Thời gian có thể linh hoạt theo thời tiết & thuỷ triều để đảm bảo an toàn","Đặc Biệt: Hai người lớn dẫn theo 1 bé từ 6-9 tuổi sẽ được miễn phí"]
 },
 
 canhbac:{
@@ -1013,7 +1051,7 @@ schedule:[
 "16:30  Tham Quan đặc sản Phú Yên",
 ],
 services:["Cano đưa đón 2 chiều","HDV chụp ảnh & quay video riêng","Ăn trưa tại Đảo", "Ăn sáng tại trung tâm thành phố"," Nước suối & khăn"," Thuê đồ tại Nhà Safe"," Xe du lịch đưa đón khách"],
-notes:["Chuẩn bị đồ bơi, kem chống nắng, nón/kính, dép dễ đi; nên mang túi chống nước cho điện thoại","Thời gian có thể linh hoạt theo thời tiết & thuỷ triều để đảm bảo an toàn"]
+notes:["Chuẩn bị đồ bơi, kem chống nắng, nón/kính, dép dễ đi; nên mang túi chống nước cho điện thoại","Thời gian có thể linh hoạt theo thời tiết & thuỷ triều để đảm bảo an toàn","Đặc Biệt: Hai người lớn dẫn theo 1 bé từ 6-9 tuổi sẽ được miễn phí"]
 },
 Phuyen3N2D:{
 title:"Tour Tham Quan Phú Yên 3N2D",
@@ -1200,7 +1238,7 @@ schedule:[
 ],
 services:["Cano đưa đón 2 chiều","Ăn trưa trên đảo","Ăn trưa trên bè"," 2 bữa ăn sáng tại trung tâm thành phố ","HDV Chụp ảnh & quay video riêng"," Xe du lịch đưa đón khách", " Thuê đồ tại Nhà Safe ", "Khăn lạnh & nước suối","Vé vào cổng tham quan các địa điểm trong Tour" ],
 
-notes:["Khách có thể thay đổi lịch trình sang ngắm Bình Minh tại Mũi Điện rồi đi Hòn Nưa","Chuẩn bị đồ bơi, kem chống nắng, nón/kính, dép dễ đi; nên mang túi chống nước cho điện thoại","Thời gian có thể linh hoạt theo thời tiết & thuỷ triều để đảm bảo an toàn"]
+notes:["Khách có thể thay đổi lịch trình sang ngắm Bình Minh tại Mũi Điện rồi đi Hòn Nưa","Chuẩn bị đồ bơi, kem chống nắng, nón/kính, dép dễ đi; nên mang túi chống nước cho điện thoại","Thời gian có thể linh hoạt theo thời tiết & thuỷ triều để đảm bảo an toàn","Đặc Biệt: Hai người lớn dẫn theo 1 bé từ 6-9 tuổi sẽ được miễn phí"]
 },
 Phuyen3N2DVIP:{
 title:"Tour Tham Quan Phú Yên 3N2D VIP",
@@ -1308,7 +1346,7 @@ schedule:[
 
 "11:30  Ăn trưa hải sản trên bè nổi Vũng Rô",
 
-"-	Nghỉ ngơi tại nhà hàng",
+"- Nghỉ ngơi tại nhà hàng",
 
 
 "Buổi chiều  ",
@@ -1325,7 +1363,7 @@ schedule:[
 ],
 services:["Cano đưa đón 2 chiều","Ăn trưa trên đảo","Ăn trưa trên bè"," 2 bữa ăn sáng tại trung tâm thành phố ","HDV Chụp ảnh & quay video riêng"," Xe du lịch đưa đón khách", " Thuê đồ tại Nhà Safe ", "Khăn lạnh & nước suối","Vé vào cổng tham quan các địa điểm trong Tour"],
 
-notes:["Chuẩn bị đồ bơi, kem chống nắng, nón/kính, dép dễ đi; nên mang túi chống nước cho điện thoại","Thời gian có thể linh hoạt theo thời tiết & thuỷ triều để đảm bảo an toàn"]
+notes:["Chuẩn bị đồ bơi, kem chống nắng, nón/kính, dép dễ đi; nên mang túi chống nước cho điện thoại","Thời gian có thể linh hoạt theo thời tiết & thuỷ triều để đảm bảo an toàn","Đặc Biệt: Hai người lớn dẫn theo 1 bé từ 6-9 tuổi sẽ được miễn phí"]
 },
 
 };
@@ -1540,7 +1578,23 @@ function sendForm(){
     alert("❌ Lỗi gửi thông tin!");
   });
 }
+const cards = document.querySelectorAll(".tour-card");
 
+window.addEventListener("scroll",()=>{
+  cards.forEach(card=>{
+    const top = card.getBoundingClientRect().top;
+    if(top < window.innerHeight - 50){
+      card.style.opacity = 1;
+      card.style.transform = "translateY(0)";
+    }
+  });
+});
+
+cards.forEach(c=>{
+  c.style.opacity = 0;
+  c.style.transform = "translateY(40px)";
+  c.style.transition = "0.5s";
+});
 </script>
 <!-- Footer Thông tin liên hệ -->  
 <footer>  
